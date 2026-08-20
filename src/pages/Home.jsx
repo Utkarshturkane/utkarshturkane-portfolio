@@ -1,7 +1,10 @@
+import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import heroImg from "../assets/profile.jpeg";
 import Reveal from "../components/Reveal";
 import HeroBackground from "../components/HeroBackground";
+
+const ThreeScene = lazy(() => import("../components/ThreeScene"));
 
 const skills = [
   { name: "JavaScript", group: "Language" },
@@ -32,6 +35,11 @@ export default function Home() {
     <>
       <section className="hero relative isolate overflow-hidden">
         <HeroBackground />
+        <div className="pointer-events-none absolute inset-0 hidden lg:block">
+          <Suspense fallback={null}>
+            <ThreeScene />
+          </Suspense>
+        </div>
         <div className="hero-content flex-col-reverse gap-10 py-16 lg:flex-row-reverse lg:gap-16">
           <Reveal y={60}>
             <div className="avatar">
