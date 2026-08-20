@@ -34,7 +34,7 @@ export default function Home() {
     <>
       <section className="hero relative isolate overflow-hidden">
         <HeroBackground />
-        <div className="pointer-events-none absolute inset-0 hidden lg:block">
+        <div className="pointer-events-none absolute inset-0 isolate hidden lg:block">
           <LazyScene />
         </div>
         <div className="hero-content flex-col-reverse gap-10 py-16 lg:flex-row-reverse lg:gap-16">
@@ -101,7 +101,7 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden bg-base-200 py-16">
-        <div className="pointer-events-none absolute inset-0 hidden md:block">
+        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
           <LazyScene position={[-3.2, 0, 0]} scale={0.7} icons={skillIcons} />
         </div>
         <div className="relative mx-auto max-w-6xl px-6">
@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden py-16">
-        <div className="pointer-events-none absolute inset-0 hidden md:block">
+        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
           <LazyScene position={[3.2, 0, 0]} scale={0.7} icons={personalIcons} />
         </div>
         <div className="relative mx-auto max-w-6xl px-6">

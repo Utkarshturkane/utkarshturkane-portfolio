@@ -100,7 +100,7 @@ export default function About() {
       </section>
 
       <section className="relative mt-12 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 hidden md:block">
+        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
           <LazyScene position={[3.2, 0, 0]} scale={0.7} icons={workIcons} />
         </div>
         <div className="relative">
@@ -137,7 +137,7 @@ export default function About() {
       </section>
 
       <section className="relative mt-12 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 hidden md:block">
+        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
           <LazyScene position={[-3.2, 0, 0]} scale={0.7} icons={skillIcons} />
         </div>
         <div className="relative">
@@ -167,7 +167,7 @@ export default function About() {
       </section>
 
       <section className="relative mt-12 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 hidden md:block">
+        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
           <LazyScene position={[3.2, 0, 0]} scale={0.7} icons={educationIcons} />
         </div>
         <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-2">

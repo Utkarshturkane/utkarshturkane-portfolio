@@ -99,7 +99,7 @@ export default function Projects() {
       </Reveal>
 
       <section className="relative mt-12 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 hidden md:block">
+        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
           <LazyScene position={[-3.2, 0, 0]} scale={0.7} icons={companyIcons} />
         </div>
         <div className="relative">
@@ -124,7 +124,7 @@ export default function Projects() {
       </section>
 
       <section className="relative mt-16 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 hidden md:block">
+        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
           <LazyScene position={[3.2, 0, 0]} scale={0.7} icons={personalIcons} />
         </div>
         <div className="relative">

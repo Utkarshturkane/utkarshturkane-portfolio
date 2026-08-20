@@ -128,7 +128,7 @@ export default function Contact() {
       </Reveal>
 
       <div className="relative mt-10 overflow-hidden rounded-3xl">
-        <div className="pointer-events-none absolute inset-0 hidden md:block">
+        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
           <LazyScene position={[0, 0, 0]} scale={0.8} icons={contactIcons} />
         </div>
         <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-5">
