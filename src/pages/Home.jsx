@@ -5,10 +5,11 @@ import HeroBackground from "../components/HeroBackground";
 import LazyScene from "../components/LazyScene";
 
 const skills = [
+  { name: "HTML", group: "Markup" },
+  { name: "CSS", group: "Styling" },
   { name: "JavaScript", group: "Language" },
   { name: "React.js", group: "Framework" },
-  { name: "Redux", group: "State Management" },
-  { name: "Node.js", group: "Runtime" },
+  { name: "Bootstrap", group: "CSS Framework" },
 ];
 
 const featured = [
@@ -107,18 +108,21 @@ export default function Home() {
               Technologies I work with every day
             </p>
           </Reveal>
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {skills.map((skill, index) => (
-              <Reveal key={skill.name} y={40} delay={index * 0.08}>
-                <div className="card card-body items-center bg-base-100 text-center shadow-sm">
+          <div className="relative mt-10 overflow-hidden">
+            <div className="animate-marquee flex w-max gap-6 px-3">
+              {[...skills, ...skills].map((skill, index) => (
+                <div
+                  key={`${skill.name}-${index}`}
+                  className="card card-body min-w-[190px] items-center bg-base-100 text-center shadow-sm"
+                >
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-xl font-bold text-primary">
                     {skill.name.charAt(0)}
                   </div>
                   <h3 className="text-lg font-semibold">{skill.name}</h3>
                   <p className="text-sm text-base-content/60">{skill.group}</p>
                 </div>
-              </Reveal>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

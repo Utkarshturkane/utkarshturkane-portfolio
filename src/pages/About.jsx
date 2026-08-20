@@ -44,11 +44,11 @@ const experience = [
 const skillGroups = [
   {
     title: "Languages",
-    items: ["JavaScript", "HTML", "CSS", "PHP"],
+    items: ["HTML", "CSS", "JavaScript", "PHP"],
   },
   {
     title: "Frameworks",
-    items: ["React.js", "Redux", "Node.js", "Bootstrap", "GSAP", "Tailwind CSS"],
+    items: ["React.js", "Bootstrap", "Node.js", "Redux", "GSAP", "Tailwind CSS"],
   },
   {
     title: "Version Control",
