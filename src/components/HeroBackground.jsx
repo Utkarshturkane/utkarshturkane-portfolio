@@ -63,6 +63,8 @@ export default function HeroBackground() {
           fillOpacity="0.06"
         />
       </svg>
+      <div className="absolute inset-0 bg-gradient-to-b from-base-100/50 via-base-100/10 to-base-100/70" />
+      <div className="absolute inset-0 bg-base-100/10" />
       <div className="dot-grid absolute inset-0 opacity-40" />
     </div>
   );
