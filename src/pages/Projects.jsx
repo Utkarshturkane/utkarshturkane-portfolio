@@ -1,6 +1,4 @@
 import Reveal from "../components/Reveal";
-import LazyScene from "../components/LazyScene";
-import { companyIcons, personalIcons } from "../components/icons";
 
 const companyProjects = [
   {
@@ -98,11 +96,7 @@ export default function Projects() {
         </p>
       </Reveal>
 
-      <section className="relative mt-12 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
-          <LazyScene position={[-3.2, 0, 0]} scale={0.7} icons={companyIcons} />
-        </div>
-        <div className="relative">
+      <section className="mt-12">
         <Reveal y={30}>
           <h2 className="text-3xl font-bold">Company Projects</h2>
           <p className="mt-2 text-base-content/60">
@@ -120,14 +114,9 @@ export default function Projects() {
             </Reveal>
           ))}
         </div>
-        </div>
       </section>
 
-      <section className="relative mt-16 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
-          <LazyScene position={[3.2, 0, 0]} scale={0.7} icons={personalIcons} />
-        </div>
-        <div className="relative">
+      <section className="mt-16">
         <Reveal y={30}>
           <h2 className="text-3xl font-bold">Personal Projects</h2>
           <p className="mt-2 text-base-content/60">
@@ -145,7 +134,6 @@ export default function Projects() {
               />
             </Reveal>
           ))}
-        </div>
         </div>
       </section>
     </div>

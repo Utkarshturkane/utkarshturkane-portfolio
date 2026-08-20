@@ -1,8 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Reveal from "../components/Reveal";
-import LazyScene from "../components/LazyScene";
-import { contactIcons } from "../components/icons";
 import {
   EMAILJS_SERVICE_ID,
   EMAILJS_TEMPLATE_ID,
@@ -127,11 +125,7 @@ export default function Contact() {
         </p>
       </Reveal>
 
-      <div className="relative mt-10 overflow-hidden rounded-3xl">
-        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
-          <LazyScene position={[0, 0, 0]} scale={0.8} icons={contactIcons} />
-        </div>
-        <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-5">
+      <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-5">
         <Reveal y={40} className="space-y-4 lg:col-span-2">
           <div className="space-y-4">
             {contactCards.map((card) => {
@@ -236,7 +230,6 @@ export default function Contact() {
             </div>
           </div>
         </Reveal>
-        </div>
       </div>
     </div>
   );

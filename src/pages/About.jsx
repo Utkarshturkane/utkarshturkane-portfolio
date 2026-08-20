@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
-import LazyScene from "../components/LazyScene";
-import { skillIcons, workIcons, educationIcons } from "../components/icons";
 
 const experience = [
   {
@@ -99,11 +97,7 @@ export default function About() {
         </Reveal>
       </section>
 
-      <section className="relative mt-12 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
-          <LazyScene position={[3.2, 0, 0]} scale={0.7} icons={workIcons} />
-        </div>
-        <div className="relative">
+      <section className="mt-12">
           <Reveal y={30}>
             <h2 className="text-3xl font-bold">Work Experience</h2>
           </Reveal>
@@ -133,17 +127,12 @@ export default function About() {
             </Reveal>
           ))}
         </div>
-        </div>
       </section>
 
-      <section className="relative mt-12 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
-          <LazyScene position={[-3.2, 0, 0]} scale={0.7} icons={skillIcons} />
-        </div>
-        <div className="relative">
-          <Reveal y={30}>
-            <h2 className="text-3xl font-bold">Skills</h2>
-          </Reveal>
+      <section className="mt-12">
+        <Reveal y={30}>
+          <h2 className="text-3xl font-bold">Skills</h2>
+        </Reveal>
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
           {skillGroups.map((group, index) => (
             <Reveal key={group.title} y={40} delay={index * 0.08}>
@@ -163,14 +152,9 @@ export default function About() {
             </Reveal>
           ))}
         </div>
-        </div>
       </section>
 
-      <section className="relative mt-12 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
-          <LazyScene position={[3.2, 0, 0]} scale={0.7} icons={educationIcons} />
-        </div>
-        <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <section className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <Reveal y={40}>
           <div className="card bg-base-100 shadow-sm">
             <div className="card-body">
@@ -209,7 +193,6 @@ export default function About() {
             </div>
           </div>
         </Reveal>
-        </div>
       </section>
 
       <Reveal y={40}>

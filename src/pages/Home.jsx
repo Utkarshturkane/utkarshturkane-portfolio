@@ -3,7 +3,6 @@ import heroImg from "../assets/profile.jpeg";
 import Reveal from "../components/Reveal";
 import HeroBackground from "../components/HeroBackground";
 import LazyScene from "../components/LazyScene";
-import { skillIcons, personalIcons } from "../components/icons";
 
 const skills = [
   { name: "JavaScript", group: "Language" },
@@ -100,11 +99,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-base-200 py-16">
-        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
-          <LazyScene position={[-3.2, 0, 0]} scale={0.7} icons={skillIcons} />
-        </div>
-        <div className="relative mx-auto max-w-6xl px-6">
+      <section className="bg-base-200 py-16">
+        <div className="mx-auto max-w-6xl px-6">
           <Reveal y={30}>
             <h2 className="text-center text-3xl font-bold">Core Skills</h2>
             <p className="mt-2 text-center text-base-content/60">
@@ -127,11 +123,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-16">
-        <div className="pointer-events-none absolute inset-0 isolate hidden md:block">
-          <LazyScene position={[3.2, 0, 0]} scale={0.7} icons={personalIcons} />
-        </div>
-        <div className="relative mx-auto max-w-6xl px-6">
+      <section className="py-16">
+        <div className="mx-auto max-w-6xl px-6">
           <Reveal y={30}>
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
