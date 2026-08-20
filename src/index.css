@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark;
+}
+
+@layer base {
+  :root {
+    --color-primary: oklch(0.55 0.23 294);
+    --color-primary-content: #ffffff;
+    --color-secondary: oklch(0.6 0.14 200);
+    --color-secondary-content: #ffffff;
+  }
+
+  [data-theme="dark"] {
+    --color-primary: oklch(0.62 0.22 294);
+    --color-primary-content: #ffffff;
+    --color-secondary: oklch(0.72 0.12 200);
+    --color-secondary-content: #0f172a;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.menu li > * {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu li > *:focus,
+.menu li > *:focus-visible,
+.menu li > *:active {
+  background-color: transparent !important;
+}
