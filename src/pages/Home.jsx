@@ -4,6 +4,7 @@ import Reveal from "../components/Reveal";
 import HeroBackground from "../components/HeroBackground";
 import LazyScene from "../components/LazyScene";
 import Magnetic from "../components/Magnetic";
+import SplitText from "../components/SplitText";
 
 const skills = [
   { name: "HTML", group: "Markup" },
@@ -53,18 +54,22 @@ export default function Home() {
           <Reveal y={50} delay={0.15}>
             <div>
               <span className="badge badge-lg mb-4 gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-5 py-3 font-medium text-white shadow-lg shadow-primary/30">
-                <span className="wave inline-block">👋</span> Hello, I am
+                <span className="wave inline-block">👋🏻</span> Hello, I am
               </span>
               <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl">
-                Utkarsh{" "}
-                <span className="bg-gradient-to-r from-primary via-fuchsia-500 to-secondary bg-clip-text text-transparent">
-                  Turkane
-                </span>
+                <SplitText text="Utkarsh" delay={0.1} />{" "}
+                <SplitText
+                  text="Turkane"
+                  delay={0.35}
+                  charClassName="text-primary"
+                />
               </h1>
               <p className="mt-3 text-2xl font-semibold">
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Web Developer
-                </span>
+                <SplitText
+                  text="Web Developer"
+                  delay={0.6}
+                  charClassName="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                />
               </p>
               <p className="mt-4 max-w-xl text-lg text-base-content/70">
                 Passionate Web Developer with 2+ years of experience building
