@@ -91,6 +91,54 @@ html {
   animation-play-state: paused;
 }
 
+@keyframes loaderLogo {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes loaderText {
+  from {
+    opacity: 0;
+    letter-spacing: 0.5em;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.2em;
+  }
+}
+
+@keyframes loaderFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.loader-logo {
+  animation: loaderLogo 1s ease forwards;
+}
+
+.loader-text {
+  animation: loaderText 1.2s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.loader-bar-fill {
+  animation: loaderFill 1.8s ease-in-out forwards;
+}
+
 @media (pointer: coarse) {
   .cursor-glow,
   .cursor-ring {
