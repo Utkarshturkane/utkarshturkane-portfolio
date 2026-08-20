@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import LazyScene from "../components/LazyScene";
+import { skillIcons, workIcons, educationIcons } from "../components/icons";
 
 const experience = [
   {
@@ -100,7 +101,7 @@ export default function About() {
 
       <section className="relative mt-12 overflow-hidden">
         <div className="pointer-events-none absolute inset-0 hidden md:block">
-          <LazyScene position={[3.2, 0, 0]} scale={0.7} colors={["#4ade80", "#facc15", "#22d3ee", "#fb923c"]} />
+          <LazyScene position={[3.2, 0, 0]} scale={0.7} icons={workIcons} />
         </div>
         <div className="relative">
           <Reveal y={30}>
@@ -137,7 +138,7 @@ export default function About() {
 
       <section className="relative mt-12 overflow-hidden">
         <div className="pointer-events-none absolute inset-0 hidden md:block">
-          <LazyScene position={[-3.2, 0, 0]} scale={0.7} colors={["#facc15", "#fb923c", "#ec4899", "#4ade80"]} />
+          <LazyScene position={[-3.2, 0, 0]} scale={0.7} icons={skillIcons} />
         </div>
         <div className="relative">
           <Reveal y={30}>
@@ -167,7 +168,7 @@ export default function About() {
 
       <section className="relative mt-12 overflow-hidden">
         <div className="pointer-events-none absolute inset-0 hidden md:block">
-          <LazyScene position={[3.2, 0, 0]} scale={0.7} colors={["#ec4899", "#4ade80", "#facc15", "#fb923c"]} />
+          <LazyScene position={[3.2, 0, 0]} scale={0.7} icons={educationIcons} />
         </div>
         <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-2">
         <Reveal y={40}>

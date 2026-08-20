@@ -3,6 +3,7 @@ import heroImg from "../assets/profile.jpeg";
 import Reveal from "../components/Reveal";
 import HeroBackground from "../components/HeroBackground";
 import LazyScene from "../components/LazyScene";
+import { skillIcons, personalIcons } from "../components/icons";
 
 const skills = [
   { name: "JavaScript", group: "Language" },
@@ -101,7 +102,7 @@ export default function Home() {
 
       <section className="relative overflow-hidden bg-base-200 py-16">
         <div className="pointer-events-none absolute inset-0 hidden md:block">
-          <LazyScene position={[-3.2, 0, 0]} scale={0.7} />
+          <LazyScene position={[-3.2, 0, 0]} scale={0.7} icons={skillIcons} />
         </div>
         <div className="relative mx-auto max-w-6xl px-6">
           <Reveal y={30}>
@@ -128,7 +129,7 @@ export default function Home() {
 
       <section className="relative overflow-hidden py-16">
         <div className="pointer-events-none absolute inset-0 hidden md:block">
-          <LazyScene position={[3.2, 0, 0]} scale={0.7} />
+          <LazyScene position={[3.2, 0, 0]} scale={0.7} icons={personalIcons} />
         </div>
         <div className="relative mx-auto max-w-6xl px-6">
           <Reveal y={30}>
