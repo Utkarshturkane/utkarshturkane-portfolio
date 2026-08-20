@@ -23,6 +23,15 @@ html {
   scroll-behavior: smooth;
 }
 
+.dot-grid {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in oklab, var(--color-base-content) 14%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 26px 26px;
+}
+
 .menu li > * {
   -webkit-tap-highlight-color: transparent;
 }
