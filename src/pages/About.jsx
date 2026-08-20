@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
+import LazyScene from "../components/LazyScene";
 
 const experience = [
   {
@@ -97,10 +98,14 @@ export default function About() {
         </Reveal>
       </section>
 
-      <section className="mt-12">
-        <Reveal y={30}>
-          <h2 className="text-3xl font-bold">Work Experience</h2>
-        </Reveal>
+      <section className="relative mt-12 overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
+          <LazyScene position={[3.2, 0, 0]} scale={0.7} colors={["#4ade80", "#facc15", "#22d3ee", "#fb923c"]} />
+        </div>
+        <div className="relative">
+          <Reveal y={30}>
+            <h2 className="text-3xl font-bold">Work Experience</h2>
+          </Reveal>
         <div className="mt-6 space-y-6">
           {experience.map((entry, index) => (
             <Reveal key={entry.period + entry.company} y={40} delay={index * 0.05}>
@@ -127,12 +132,17 @@ export default function About() {
             </Reveal>
           ))}
         </div>
+        </div>
       </section>
 
-      <section className="mt-12">
-        <Reveal y={30}>
-          <h2 className="text-3xl font-bold">Skills</h2>
-        </Reveal>
+      <section className="relative mt-12 overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
+          <LazyScene position={[-3.2, 0, 0]} scale={0.7} colors={["#facc15", "#fb923c", "#ec4899", "#4ade80"]} />
+        </div>
+        <div className="relative">
+          <Reveal y={30}>
+            <h2 className="text-3xl font-bold">Skills</h2>
+          </Reveal>
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
           {skillGroups.map((group, index) => (
             <Reveal key={group.title} y={40} delay={index * 0.08}>
@@ -152,9 +162,14 @@ export default function About() {
             </Reveal>
           ))}
         </div>
+        </div>
       </section>
 
-      <section className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <section className="relative mt-12 overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
+          <LazyScene position={[3.2, 0, 0]} scale={0.7} colors={["#ec4899", "#4ade80", "#facc15", "#fb923c"]} />
+        </div>
+        <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-2">
         <Reveal y={40}>
           <div className="card bg-base-100 shadow-sm">
             <div className="card-body">
@@ -193,6 +208,7 @@ export default function About() {
             </div>
           </div>
         </Reveal>
+        </div>
       </section>
 
       <Reveal y={40}>

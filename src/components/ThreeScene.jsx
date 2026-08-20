@@ -2,7 +2,14 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
 import { useRef } from "react";
 
-function FloatingShapes() {
+const shapeDefs = [
+  { geometry: <torusKnotGeometry args={[1.15, 0.34, 160, 24]} />, pos: [0, 0, 0] },
+  { geometry: <icosahedronGeometry args={[0.75, 0]} />, pos: [2.8, 0.9, -1] },
+  { geometry: <octahedronGeometry args={[0.6, 0]} />, pos: [-2.3, -0.8, -1.5] },
+  { geometry: <sphereGeometry args={[0.5, 24, 24]} />, pos: [2.6, -1, 0.5] },
+];
+
+function FloatingShapes({ colors, position, scale }) {
   const group = useRef(null);
 
   useFrame((_, delta) => {
@@ -13,59 +20,34 @@ function FloatingShapes() {
   });
 
   return (
-    <group ref={group} position={[2.4, 0, 0]}>
-      <Float speed={2} rotationIntensity={0.6} floatIntensity={0.9}>
-        <mesh>
-          <torusKnotGeometry args={[1.15, 0.34, 160, 24]} />
-          <meshStandardMaterial
-            color="#7c3aed"
-            wireframe
-            transparent
-            opacity={0.85}
-          />
-        </mesh>
-      </Float>
-
-      <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
-        <mesh position={[2.8, 0.9, -1]}>
-          <icosahedronGeometry args={[0.75, 0]} />
-          <meshStandardMaterial
-            color="#06b6d4"
-            wireframe
-            transparent
-            opacity={0.7}
-          />
-        </mesh>
-      </Float>
-
-      <Float speed={1.8} rotationIntensity={0.4} floatIntensity={1.2}>
-        <mesh position={[-2.3, -0.8, -1.5]}>
-          <octahedronGeometry args={[0.6, 0]} />
-          <meshStandardMaterial
-            color="#a855f7"
-            wireframe
-            transparent
-            opacity={0.75}
-          />
-        </mesh>
-      </Float>
-
-      <Float speed={1.3} rotationIntensity={0.7} floatIntensity={0.8}>
-        <mesh position={[2.6, -1, 0.5]}>
-          <sphereGeometry args={[0.5, 24, 24]} />
-          <meshStandardMaterial
-            color="#22d3ee"
-            wireframe
-            transparent
-            opacity={0.6}
-          />
-        </mesh>
-      </Float>
+    <group ref={group} position={position} scale={scale}>
+      {shapeDefs.map((shape, i) => (
+        <Float
+          key={i}
+          speed={1.4 + i * 0.3}
+          rotationIntensity={0.5}
+          floatIntensity={0.9}
+        >
+          <mesh position={shape.pos}>
+            {shape.geometry}
+            <meshStandardMaterial
+              color={colors[i % colors.length]}
+              wireframe
+              transparent
+              opacity={0.8}
+            />
+          </mesh>
+        </Float>
+      ))}
     </group>
   );
 }
 
-export default function ThreeScene() {
+export default function ThreeScene({
+  colors = ["#ec4899", "#4ade80", "#facc15", "#fb923c"],
+  position = [2.4, 0, 0],
+  scale = 1,
+}) {
   return (
     <Canvas
       camera={{ position: [0, 0, 6], fov: 45 }}
@@ -75,7 +57,7 @@ export default function ThreeScene() {
     >
       <ambientLight intensity={0.9} />
       <directionalLight position={[3, 3, 5]} intensity={1.2} />
-      <FloatingShapes />
+      <FloatingShapes colors={colors} position={position} scale={scale} />
     </Canvas>
   );
 }

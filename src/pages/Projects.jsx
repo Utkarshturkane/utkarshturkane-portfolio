@@ -1,4 +1,5 @@
 import Reveal from "../components/Reveal";
+import LazyScene from "../components/LazyScene";
 
 const companyProjects = [
   {
@@ -96,7 +97,11 @@ export default function Projects() {
         </p>
       </Reveal>
 
-      <section className="mt-12">
+      <section className="relative mt-12 overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
+          <LazyScene position={[-3.2, 0, 0]} scale={0.7} colors={["#fb923c", "#ec4899", "#4ade80", "#facc15"]} />
+        </div>
+        <div className="relative">
         <Reveal y={30}>
           <h2 className="text-3xl font-bold">Company Projects</h2>
           <p className="mt-2 text-base-content/60">
@@ -114,9 +119,14 @@ export default function Projects() {
             </Reveal>
           ))}
         </div>
+        </div>
       </section>
 
-      <section className="mt-16">
+      <section className="relative mt-16 overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
+          <LazyScene position={[3.2, 0, 0]} scale={0.7} colors={["#4ade80", "#fb923c", "#facc15", "#ec4899"]} />
+        </div>
+        <div className="relative">
         <Reveal y={30}>
           <h2 className="text-3xl font-bold">Personal Projects</h2>
           <p className="mt-2 text-base-content/60">
@@ -134,6 +144,7 @@ export default function Projects() {
               />
             </Reveal>
           ))}
+        </div>
         </div>
       </section>
     </div>

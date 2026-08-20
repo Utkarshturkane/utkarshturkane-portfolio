@@ -1,10 +1,8 @@
-import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import heroImg from "../assets/profile.jpeg";
 import Reveal from "../components/Reveal";
 import HeroBackground from "../components/HeroBackground";
-
-const ThreeScene = lazy(() => import("../components/ThreeScene"));
+import LazyScene from "../components/LazyScene";
 
 const skills = [
   { name: "JavaScript", group: "Language" },
@@ -36,9 +34,7 @@ export default function Home() {
       <section className="hero relative isolate overflow-hidden">
         <HeroBackground />
         <div className="pointer-events-none absolute inset-0 hidden lg:block">
-          <Suspense fallback={null}>
-            <ThreeScene />
-          </Suspense>
+          <LazyScene />
         </div>
         <div className="hero-content flex-col-reverse gap-10 py-16 lg:flex-row-reverse lg:gap-16">
           <Reveal y={60}>
@@ -103,8 +99,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-base-200 py-16">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="relative overflow-hidden bg-base-200 py-16">
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
+          <LazyScene position={[-3.2, 0, 0]} scale={0.7} />
+        </div>
+        <div className="relative mx-auto max-w-6xl px-6">
           <Reveal y={30}>
             <h2 className="text-center text-3xl font-bold">Core Skills</h2>
             <p className="mt-2 text-center text-base-content/60">
@@ -127,8 +126,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="relative overflow-hidden py-16">
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
+          <LazyScene position={[3.2, 0, 0]} scale={0.7} />
+        </div>
+        <div className="relative mx-auto max-w-6xl px-6">
           <Reveal y={30}>
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
