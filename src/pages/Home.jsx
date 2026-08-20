@@ -52,12 +52,19 @@ export default function Home() {
           </Reveal>
           <Reveal y={50} delay={0.15}>
             <div>
-              <p className="mb-4 badge badge-primary badge-lg">Hello, I am</p>
+              <span className="badge badge-lg mb-4 gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-5 py-3 font-medium text-white shadow-lg shadow-primary/30">
+                <span className="wave inline-block">👋</span> Hello, I am
+              </span>
               <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl">
-                Utkarsh <span className="text-primary">Turkane</span>
+                Utkarsh{" "}
+                <span className="bg-gradient-to-r from-primary via-fuchsia-500 to-secondary bg-clip-text text-transparent">
+                  Turkane
+                </span>
               </h1>
-              <p className="mt-3 text-2xl font-semibold text-primary">
-                Web Developer
+              <p className="mt-3 text-2xl font-semibold">
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  Web Developer
+                </span>
               </p>
               <p className="mt-4 max-w-xl text-lg text-base-content/70">
                 Passionate Web Developer with 2+ years of experience building
