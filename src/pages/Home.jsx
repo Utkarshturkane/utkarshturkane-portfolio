@@ -68,7 +68,7 @@ export default function Home() {
                 <SplitText
                   text="Web Developer"
                   delay={0.6}
-                  charClassName="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                  charClassName="text-base-content"
                 />
               </p>
               <p className="mt-4 max-w-xl text-lg text-base-content/70">
