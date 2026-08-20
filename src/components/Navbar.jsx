@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "./Logo";
+import Magnetic from "./Magnetic";
 
 const navItems = [
   { label: "Home", to: "/" },
@@ -102,12 +103,14 @@ export default function Navbar() {
             </svg>
           )}
         </button>
-        <a
-          href="mailto:utkarshturkane@gmail.com"
-          className="btn btn-primary hidden sm:inline-flex"
-        >
-          Hire Me
-        </a>
+        <Magnetic>
+          <a
+            href="mailto:utkarshturkane@gmail.com"
+            className="btn btn-primary hidden sm:inline-flex"
+          >
+            Hire Me
+          </a>
+        </Magnetic>
         <button
           type="button"
           className="btn btn-ghost btn-circle md:hidden"

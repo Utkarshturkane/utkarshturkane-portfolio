@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
+import Magnetic from "../components/Magnetic";
 
 const experience = [
   {
@@ -203,9 +204,11 @@ export default function About() {
               Let us build something great together.
             </p>
           </div>
+          <Magnetic>
           <Link to="/contact" className="btn btn-neutral">
             Get in touch
           </Link>
+        </Magnetic>
         </section>
       </Reveal>
     </div>

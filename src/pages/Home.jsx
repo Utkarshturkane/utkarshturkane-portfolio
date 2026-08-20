@@ -3,6 +3,7 @@ import heroImg from "../assets/profile.jpeg";
 import Reveal from "../components/Reveal";
 import HeroBackground from "../components/HeroBackground";
 import LazyScene from "../components/LazyScene";
+import Magnetic from "../components/Magnetic";
 
 const skills = [
   { name: "HTML", group: "Markup" },
@@ -63,12 +64,16 @@ export default function Home() {
                 responsive, high-performance websites and landing pages.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link to="/projects" className="btn btn-primary">
-                  View My Work
-                </Link>
-                <Link to="/contact" className="btn btn-outline btn-primary">
-                  Contact Me
-                </Link>
+                <Magnetic>
+                  <Link to="/projects" className="btn btn-primary">
+                    View My Work
+                  </Link>
+                </Magnetic>
+                <Magnetic>
+                  <Link to="/contact" className="btn btn-outline btn-primary">
+                    Contact Me
+                  </Link>
+                </Magnetic>
               </div>
             </div>
           </Reveal>
@@ -137,9 +142,11 @@ export default function Home() {
                   A selection of work I am proud of
                 </p>
               </div>
-              <Link to="/projects" className="btn btn-ghost btn-primary">
-                See all projects
-              </Link>
+              <Magnetic>
+                <Link to="/projects" className="btn btn-ghost btn-primary">
+                  See all projects
+                </Link>
+              </Magnetic>
             </div>
           </Reveal>
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -160,14 +167,16 @@ export default function Home() {
                       ))}
                     </div>
                     <div className="card-actions mt-4">
-                      <a
-                        href={project.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="btn btn-primary btn-sm"
-                      >
-                        Live Demo
-                      </a>
+                      <Magnetic>
+                        <a
+                          href={project.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="btn btn-primary btn-sm"
+                        >
+                          Live Demo
+                        </a>
+                      </Magnetic>
                     </div>
                   </div>
                 </div>

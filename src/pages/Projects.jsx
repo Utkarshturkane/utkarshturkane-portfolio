@@ -1,4 +1,5 @@
 import Reveal from "../components/Reveal";
+import Magnetic from "../components/Magnetic";
 
 const companyProjects = [
   {
@@ -71,14 +72,16 @@ function ProjectCard({ title, url, tech, description }) {
           ))}
         </div>
         <div className="card-actions mt-4 justify-start">
-          <a
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-            className="btn btn-primary btn-sm"
-          >
-            Visit Website
-          </a>
+          <Magnetic>
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-primary btn-sm"
+            >
+              Visit Website
+            </a>
+          </Magnetic>
         </div>
       </div>
     </div>

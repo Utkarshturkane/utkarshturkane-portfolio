@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Reveal from "../components/Reveal";
+import Magnetic from "../components/Magnetic";
 import {
   EMAILJS_SERVICE_ID,
   EMAILJS_TEMPLATE_ID,
@@ -219,6 +220,7 @@ export default function Contact() {
                   required
                 />
               </fieldset>
+              <Magnetic>
               <button
                 type="submit"
                 className="btn btn-primary w-full sm:w-auto"
@@ -226,6 +228,7 @@ export default function Contact() {
               >
                 {status === "sending" ? "Sending..." : "Send Message"}
               </button>
+            </Magnetic>
             </form>
             </div>
           </div>
